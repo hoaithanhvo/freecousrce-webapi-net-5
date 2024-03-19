@@ -12,4 +12,5 @@ namespace MyWebApiApp.Models
     {
         public Guid MaHoangHoa { get; set; }
     }
+    
 }

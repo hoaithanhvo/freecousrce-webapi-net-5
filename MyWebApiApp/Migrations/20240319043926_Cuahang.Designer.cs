@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyWebApiApp.Data;
 
 namespace MyWebApiApp.Migrations
 {
     [DbContext(typeof(MyDBContext))]
-    partial class MyDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240319043926_Cuahang")]
+    partial class Cuahang
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,56 +66,6 @@ namespace MyWebApiApp.Migrations
                     b.HasKey("MaLoai");
 
                     b.ToTable("Loai");
-                });
-
-            modelBuilder.Entity("MyWebApiApp.Data.VanChuyen", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<float>("ChiPhi")
-                        .HasColumnType("real");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("VanChuyen");
-                });
-
-            modelBuilder.Entity("MyWebApiApp.Models.CuaHang", b =>
-                {
-                    b.Property<int>("MaCuaHang")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ChieuDai")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ChieuRong")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Diachi")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("PhoneyNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TenCuaHang")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MaCuaHang");
-
-                    b.ToTable("CuaHangs");
                 });
 
             modelBuilder.Entity("MyWebApiApp.Data.HangHoa", b =>

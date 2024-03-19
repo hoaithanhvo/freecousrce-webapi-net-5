@@ -9,6 +9,9 @@ namespace MyWebApiApp.Data
         public MyDBContext(DbContextOptions options):base(options) { }
         public DbSet<HangHoa> HangHoas { get; set; }
         public DbSet<Loai> Loais { get; set; }
+        public DbSet<CuaHangData> CuaHangs { get; set; }
+        public DbSet<VanChuyenss> VanChuyen { get; set; }
+
 
     }
 }

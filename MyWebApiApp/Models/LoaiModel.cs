@@ -11,4 +11,5 @@ namespace MyWebApiApp.Models
 
         public virtual ICollection<HangHoa> HangHoas { get; set; }
     }
+    
 }

@@ -12,6 +12,7 @@ namespace MyWebApiApp.Controllers
     {
         
         public static List<HangHoa> hangHoas = new List<HangHoa>();
+        
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -20,13 +21,17 @@ namespace MyWebApiApp.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(HangHoaVM hoangHoaVm) {
+        public IActionResult Create(HangHoa hoangHoaVm) {
+           
+            
 
             var hanghoa = new HangHoa
             {
                 MaHoangHoa = Guid.NewGuid(),
                 TenHangHoa = hoangHoaVm.TenHangHoa,
-                DonGia = hoangHoaVm.DonGia,
+                DonGia = hoangHoaVm.DonGia
+                
+
 
 
             };
